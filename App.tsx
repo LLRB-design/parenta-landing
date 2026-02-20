@@ -20,21 +20,21 @@ const App: React.FC = () => {
     status: 'pregnant' // 'pregnant', 'partner', 'parent', 'other'
   });
   const [submitted, setSubmitted] = useState(false);
-  const [submitError, setSubmitError] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
 
   const handleSubscribe = async (e: React.FormEvent) => {
     e.preventDefault();
     if (formData.email) {
       setLoading(true);
-      setSubmitError(false);
+      setSubmitError(null);
       try {
         await addContactToBrevo(formData.firstName, formData.email, formData.status);
         setSubmitted(true);
         setFormData({ firstName: '', email: '', status: 'pregnant' });
       } catch (err) {
         console.error('Brevo:', err);
-        setSubmitError(true);
+        setSubmitError(err instanceof Error ? err.message : 'Erreur inconnue');
       } finally {
         setLoading(false);
       }
@@ -329,7 +329,7 @@ const App: React.FC = () => {
                   </button>
                   {submitError && (
                     <p className="text-red-500 text-sm text-center mt-2">
-                      Une erreur est survenue. Réessaie ou contacte-nous à contact@parenta.fr.
+                      Erreur : {submitError}
                     </p>
                   )}
                 </form>

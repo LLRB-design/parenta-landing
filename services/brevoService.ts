@@ -14,6 +14,10 @@ export async function addContactToBrevo(
 ): Promise<void> {
   const apiKey = process.env.BREVO_API_KEY;
 
+  if (!apiKey) {
+    throw new Error('BREVO_API_KEY manquante dans le build');
+  }
+
   const response = await fetch('https://api.brevo.com/v3/contacts', {
     method: 'POST',
     headers: {
