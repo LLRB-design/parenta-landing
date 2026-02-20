@@ -24,19 +24,17 @@ jobs:
           node-version: 20
           cache: npm
       - run: npm install
-      - name: Check BREVO_API_KEY
+      - name: Write BREVO_API_KEY to .env
+        env:
+          BREVO_API_KEY: ${{ secrets.BREVO_API_KEY }}
         run: |
-          if [ -z "$BREVO_API_KEY" ]; then
-            echo "❌ BREVO_API_KEY est vide ou absente"
-            exit 1
+          if [ -n "$BREVO_API_KEY" ]; then
+            echo "BREVO_API_KEY=$BREVO_API_KEY" >> .env
+            echo "✅ BREVO_API_KEY written to .env"
           else
-            echo "✅ BREVO_API_KEY est présente (longueur: ${#BREVO_API_KEY})"
+            echo "⚠️ BREVO_API_KEY not set"
           fi
-        env:
-          BREVO_API_KEY: ${{ secrets.BREVO_API_KEY }}
       - run: npm run build
-        env:
-          BREVO_API_KEY: ${{ secrets.BREVO_API_KEY }}
       - uses: actions/upload-pages-artifact@v3
         with:
           path: dist
