@@ -343,17 +343,17 @@ const App: React.FC = () => {
             <p className="text-[4rem] sm:text-[8rem] md:text-[12rem] lg:text-[20rem] font-serif italic text-[#161B30] opacity-[0.03] select-none leading-none">Parenta.</p>
             <p className="text-2xl sm:text-4xl md:text-6xl text-[#161B30] font-serif italic">Choisir en conscience.</p>
           </div>
-          <div className="pt-8 md:pt-16 flex flex-col md:flex-row justify-between w-full text-[10px] font-bold uppercase tracking-[0.4em] text-[#161B30]/30 gap-6 md:gap-12 border-t border-navy/5">
-            <div className="flex gap-8 md:gap-16 justify-center md:justify-start">
+          <div className="pt-8 md:pt-16 flex flex-col items-center md:flex-row md:items-center justify-between w-full text-[10px] font-bold uppercase tracking-[0.2em] md:tracking-[0.4em] text-[#161B30]/30 gap-4 md:gap-12 border-t border-navy/5">
+            <div className="flex gap-6 md:gap-16 justify-center md:justify-start">
               <span>© 2026 Parenta</span>
               <a href="#" className="hover:text-[#161B30] transition-colors">Mentions légales</a>
             </div>
 
             <div className="flex justify-center md:absolute md:left-1/2 md:-translate-x-1/2">
-              <span className="text-navy/20 font-medium flex items-center gap-2">Made with love <span className="opacity-20"><Logo hideText className="h-4" /></span></span>
+              <span className="font-medium flex items-center gap-2">Made with love <span className="opacity-20"><Logo hideText className="h-4" /></span></span>
             </div>
 
-            <div className="flex gap-8 md:gap-16 justify-center md:justify-end">
+            <div className="flex flex-col items-center md:flex-row md:items-center gap-3 md:gap-16 justify-center md:justify-end">
               <a href="https://www.instagram.com/parenta.app/" target="_blank" rel="noopener noreferrer" className="hover:text-[#161B30] transition-colors">Instagram</a>
               <div className="flex flex-col items-center md:items-end gap-1">
                 <a href="#beta" className="hover:text-[#161B30] transition-colors">Contact</a>
