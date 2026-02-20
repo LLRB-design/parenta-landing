@@ -139,7 +139,7 @@ const App: React.FC = () => {
       </header>
 
       {/* Section Problème */}
-      <Section id="propose" className="bg-[#1e1535] text-white rounded-[5rem] mx-4 md:mx-10 mb-24 scroll-mt-24">
+      <Section id="propose" className="bg-[#1a2744] text-white rounded-[5rem] mx-4 md:mx-10 mb-24 scroll-mt-24">
         <div className="max-w-5xl mx-auto space-y-12 md:space-y-24 py-8 md:py-12">
           <div className="space-y-8 text-center">
             <span className="text-pink-300 text-xs font-bold uppercase tracking-[0.5em]">Le constat</span>
