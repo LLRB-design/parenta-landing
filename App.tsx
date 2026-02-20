@@ -20,17 +20,24 @@ const App: React.FC = () => {
     status: 'pregnant' // 'pregnant', 'partner', 'parent', 'other'
   });
   const [submitted, setSubmitted] = useState(false);
+  const [submitError, setSubmitError] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   const handleSubscribe = async (e: React.FormEvent) => {
     e.preventDefault();
     if (formData.email) {
+      setLoading(true);
+      setSubmitError(false);
       try {
         await addContactToBrevo(formData.firstName, formData.email, formData.status);
+        setSubmitted(true);
+        setFormData({ firstName: '', email: '', status: 'pregnant' });
       } catch (err) {
         console.error('Brevo:', err);
+        setSubmitError(true);
+      } finally {
+        setLoading(false);
       }
-      setSubmitted(true);
-      setFormData({ firstName: '', email: '', status: 'pregnant' });
     }
   };
 
@@ -313,12 +320,18 @@ const App: React.FC = () => {
                     </div>
                   </div>
 
-                  <button 
+                  <button
                     type="submit"
-                    className="w-full bg-[#1a2744] text-white py-6 rounded-full text-sm md:text-xl font-bold hover:shadow-[0_20px_40px_rgba(22,27,48,0.3)] hover:-translate-y-1 transition-all active:scale-[0.98] mt-4"
+                    disabled={loading}
+                    className="w-full bg-[#1a2744] text-white py-6 rounded-full text-sm md:text-xl font-bold hover:shadow-[0_20px_40px_rgba(22,27,48,0.3)] hover:-translate-y-1 transition-all active:scale-[0.98] mt-4 disabled:opacity-60 disabled:cursor-not-allowed"
                   >
-                    S'inscrire à la bêta
+                    {loading ? 'Envoi en cours…' : "S'inscrire à la bêta"}
                   </button>
+                  {submitError && (
+                    <p className="text-red-500 text-sm text-center mt-2">
+                      Une erreur est survenue. Réessaie ou contacte-nous à contact@parenta.fr.
+                    </p>
+                  )}
                 </form>
               ) : (
                 <div className="py-20 text-center space-y-8 animate-in zoom-in duration-700">
