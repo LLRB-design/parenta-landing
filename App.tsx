@@ -140,7 +140,7 @@ const App: React.FC = () => {
 
       {/* Section Problème */}
       <Section id="propose" className="bg-[#161B30] text-white rounded-[5rem] mx-4 md:mx-10 mb-24 scroll-mt-24">
-        <div className="max-w-5xl mx-auto space-y-24 py-12">
+        <div className="max-w-5xl mx-auto space-y-12 md:space-y-24 py-8 md:py-12">
           <div className="space-y-8 text-center">
             <span className="text-pink-300 text-xs font-bold uppercase tracking-[0.5em]">Le constat</span>
             <h2 className="text-3xl md:text-5xl lg:text-8xl font-serif text-white leading-tight">Le problème n’est pas le manque d’informations.</h2>
@@ -305,7 +305,7 @@ const App: React.FC = () => {
                           key={opt.id}
                           type="button"
                           onClick={() => setFormData({...formData, status: opt.id})}
-                          className={`py-4 rounded-3xl border-2 transition-all text-sm font-bold ${formData.status === opt.id ? 'bg-[#161B30] text-white border-[#161B30] shadow-md' : 'bg-white border-white text-[#161B30]/40 hover:border-[#161B30]/10'}`}
+                          className={`py-4 rounded-3xl border-2 transition-all text-xs md:text-sm font-bold whitespace-nowrap ${formData.status === opt.id ? 'bg-[#161B30] text-white border-[#161B30] shadow-md' : 'bg-white border-white text-[#161B30]/40 hover:border-[#161B30]/10'}`}
                         >
                           {opt.label}
                         </button>
