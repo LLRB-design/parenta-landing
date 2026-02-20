@@ -143,14 +143,14 @@ const App: React.FC = () => {
         <div className="max-w-5xl mx-auto space-y-24 py-12">
           <div className="space-y-8 text-center">
             <span className="text-pink-300 text-xs font-bold uppercase tracking-[0.5em]">Le constat</span>
-            <h2 className="text-5xl md:text-8xl font-serif text-white leading-tight">Le problème n’est pas le manque d’informations.</h2>
+            <h2 className="text-3xl md:text-5xl lg:text-8xl font-serif text-white leading-tight">Le problème n’est pas le manque d’informations.</h2>
           </div>
           
-          <div className="grid md:grid-cols-2 gap-20 text-2xl font-light leading-relaxed text-white/70">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-20 text-2xl font-light leading-relaxed text-white/70">
             <p>
               Pendant la grossesse, les réponses sont partout : articles, podcasts, IA, proches, réseaux sociaux.
             </p>
-            <p className="text-white italic border-l-2 border-white/10 pl-10">
+            <p className="text-white italic border-l-0 md:border-l-2 border-white/10 pl-0 md:pl-10">
               Mais personne ne montre le paysage global. Résultat : on découvre les options trop tard ou on choisit sous pression.
             </p>
           </div>
@@ -354,7 +354,6 @@ const App: React.FC = () => {
             </div>
 
             <div className="flex flex-col items-center md:flex-row md:items-center gap-3 md:gap-16 justify-center md:justify-end">
-              <a href="https://www.instagram.com/parenta.app/" target="_blank" rel="noopener noreferrer" className="hover:text-[#161B30] transition-colors">Instagram</a>
               <div className="flex flex-col items-center md:items-end gap-1">
                 <a href="#beta" className="hover:text-[#161B30] transition-colors">Contact</a>
                 <a href="mailto:contact@parenta.fr" className="hover:text-[#161B30] transition-colors normal-case">contact@parenta.fr</a>
