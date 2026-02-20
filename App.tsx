@@ -139,7 +139,7 @@ const App: React.FC = () => {
       </header>
 
       {/* Section Problème */}
-      <Section id="propose" className="bg-[#161B30] text-white rounded-[5rem] mx-4 md:mx-10 mb-24 scroll-mt-24">
+      <Section id="propose" className="bg-[#1e1535] text-white rounded-[5rem] mx-4 md:mx-10 mb-24 scroll-mt-24">
         <div className="max-w-5xl mx-auto space-y-12 md:space-y-24 py-8 md:py-12">
           <div className="space-y-8 text-center">
             <span className="text-pink-300 text-xs font-bold uppercase tracking-[0.5em]">Le constat</span>
@@ -239,7 +239,7 @@ const App: React.FC = () => {
         <div className="max-w-5xl mx-auto bg-white p-12 md:p-24 rounded-[5rem] shadow-[0_64px_128px_-32px_rgba(22,27,48,0.1)] border border-white relative overflow-hidden">
           <div className="absolute top-0 right-0 -mr-40 -mt-40 w-96 h-96 bg-pink-100 rounded-full blur-[100px] opacity-40"></div>
           
-          <div className="relative z-10 grid lg:grid-cols-2 gap-20 items-center">
+          <div className="relative z-10 grid lg:grid-cols-2 gap-6 lg:gap-20 items-center">
             <div className="space-y-10">
               <div className="space-y-6">
                 <span className="text-orange-600 text-xs font-bold uppercase tracking-widest">Rejoindre la bêta Parenta</span>
@@ -259,7 +259,7 @@ const App: React.FC = () => {
               </div>
             </div>
 
-            <div className="bg-slate-50/50 p-8 md:p-12 rounded-[3rem] border border-white shadow-[0_8px_32px_rgba(0,0,0,0.02)]">
+            <div className="bg-slate-50/50 p-5 md:p-12 rounded-[3rem] border border-white shadow-[0_8px_32px_rgba(0,0,0,0.02)]">
               {!submitted ? (
                 <form onSubmit={handleSubscribe} className="space-y-6">
                   <div className="space-y-2">
@@ -315,7 +315,7 @@ const App: React.FC = () => {
 
                   <button 
                     type="submit"
-                    className="w-full bg-[#161B30] text-white py-6 rounded-full text-xl font-bold hover:shadow-[0_20px_40px_rgba(22,27,48,0.3)] hover:-translate-y-1 transition-all active:scale-[0.98] mt-4"
+                    className="w-full bg-[#161B30] text-white py-6 rounded-full text-sm md:text-xl font-bold hover:shadow-[0_20px_40px_rgba(22,27,48,0.3)] hover:-translate-y-1 transition-all active:scale-[0.98] mt-4"
                   >
                     S'inscrire à la bêta
                   </button>
