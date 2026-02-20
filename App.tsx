@@ -79,8 +79,8 @@ const App: React.FC = () => {
       <nav className="fixed top-0 w-full z-50 bg-white/60 backdrop-blur-xl border-b border-white/20">
         <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
           <Logo className="h-8" />
-          <div className="hidden md:flex gap-10 text-[10px] font-bold uppercase tracking-[0.2em] items-center text-[#161B30]">
-            <a href="#beta" className="bg-[#161B30] text-white px-8 py-3.5 rounded-full hover:shadow-2xl hover:scale-105 transition-all duration-300">
+          <div className="hidden md:flex gap-10 text-[10px] font-bold uppercase tracking-[0.2em] items-center text-[#1a2744]">
+            <a href="#beta" className="bg-[#1a2744] text-white px-8 py-3.5 rounded-full hover:shadow-2xl hover:scale-105 transition-all duration-300">
               Rejoindre la bêta
             </a>
           </div>
@@ -96,17 +96,17 @@ const App: React.FC = () => {
         <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 lg:gap-24 items-center h-full">
           <div className="space-y-12 relative z-10">
             <div className="space-y-8">
-              <div className="inline-flex items-center gap-2 px-4 py-1 rounded-full bg-[#161B30]/5 border border-[#161B30]/10 text-[#161B30] text-[10px] font-bold uppercase tracking-widest">
+              <div className="inline-flex items-center gap-2 px-4 py-1 rounded-full bg-[#1a2744]/5 border border-[#1a2744]/10 text-[#1a2744] text-[10px] font-bold uppercase tracking-widest">
                 <Sparkles className="w-3 h-3 text-orange-500" /> 
                 Bêta ouverte aux futurs parents
               </div>
-              <h1 className="text-5xl md:text-7xl lg:text-[6rem] font-['Fraunces'] font-normal leading-[1] text-[#161B30] tracking-tight text-balance">
+              <h1 className="text-5xl md:text-7xl lg:text-[6rem] font-['Fraunces'] font-normal leading-[1] text-[#1a2744] tracking-tight text-balance">
                 La boussole des parents pour <span className="font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#C85A1A] to-pink-500">choisir en conscience.</span>
               </h1>
             </div>
             
             <div className="space-y-8 max-w-xl">
-              <p className="text-xl md:text-2xl text-[#161B30]/70 font-serif leading-relaxed text-balance">
+              <p className="text-xl md:text-2xl text-[#1a2744]/70 font-serif leading-relaxed text-balance">
                 Quand on devient parent, on entre dans un monde immense et rarement expliqué. Parenta vous aide à naviguer dans ce paysage.
               </p>
             </div>
@@ -114,13 +114,13 @@ const App: React.FC = () => {
             <div className="flex flex-col sm:flex-row items-center gap-8 pt-4">
               <a 
                 href="#beta" 
-                className="w-full sm:w-auto bg-[#161B30] text-white px-12 py-6 rounded-full text-xl font-bold hover:translate-y-[-4px] transition-all duration-300 shadow-xl flex items-center justify-center gap-4"
+                className="w-full sm:w-auto bg-[#1a2744] text-white px-12 py-6 rounded-full text-xl font-bold hover:translate-y-[-4px] transition-all duration-300 shadow-xl flex items-center justify-center gap-4"
               >
                 Rejoindre la bêta <ArrowRight className="w-6 h-6" />
               </a>
-              <div className="flex flex-col border-l border-[#161B30]/10 pl-8">
-                <p className="text-xs font-bold text-[#161B30] uppercase tracking-[0.2em]">Accès gratuit</p>
-                <p className="text-xs text-[#161B30]/40">Places limitées pour la bêta</p>
+              <div className="flex flex-col border-l border-[#1a2744]/10 pl-8">
+                <p className="text-xs font-bold text-[#1a2744] uppercase tracking-[0.2em]">Accès gratuit</p>
+                <p className="text-xs text-[#1a2744]/40">Places limitées pour la bêta</p>
               </div>
             </div>
           </div>
@@ -133,7 +133,7 @@ const App: React.FC = () => {
             </div>
 
             {/* Subtle path decoration */}
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[110%] h-[110%] border border-[#161B30]/5 rounded-full -z-10 animate-spin-slow"></div>
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[110%] h-[110%] border border-[#1a2744]/5 rounded-full -z-10 animate-spin-slow"></div>
           </div>
         </div>
       </header>
@@ -162,25 +162,25 @@ const App: React.FC = () => {
         <div className="max-w-4xl mx-auto text-center mb-32 space-y-8">
           <div className="space-y-4">
             <span className="text-[#C85A1A] text-[10px] font-bold uppercase tracking-[0.4em]">Comment ça marche</span>
-            <h2 className="text-6xl md:text-8xl font-['Fraunces'] font-normal text-[#161B30] leading-none">Une nouvelle façon <br/> d'explorer.</h2>
+            <h2 className="text-6xl md:text-8xl font-['Fraunces'] font-normal text-[#1a2744] leading-none">Une nouvelle façon <br/> d'explorer.</h2>
           </div>
-          <p className="text-xl text-[#161B30]/50 font-light max-w-2xl mx-auto leading-relaxed">
+          <p className="text-xl text-[#1a2744]/50 font-light max-w-2xl mx-auto leading-relaxed">
             Quatre étapes pour passer du bruit de l'information à la clarté de la décision.
           </p>
         </div>
         
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8">
           {steps.map((step, i) => (
-            <div key={i} className="relative p-10 rounded-[3rem] bg-white border border-[#161B30]/5 shadow-sm space-y-8 group hover:-translate-y-2 transition-all duration-500">
+            <div key={i} className="relative p-10 rounded-[3rem] bg-white border border-[#1a2744]/5 shadow-sm space-y-8 group hover:-translate-y-2 transition-all duration-500">
               <div className="flex justify-between items-start">
-                <span className="text-4xl font-serif italic text-[#161B30]/10 font-bold tracking-tighter group-hover:text-[#C85A1A]/20 transition-colors">{step.num}</span>
+                <span className="text-4xl font-serif italic text-[#1a2744]/10 font-bold tracking-tighter group-hover:text-[#C85A1A]/20 transition-colors">{step.num}</span>
                 <div className="w-14 h-14 rounded-2xl bg-[#FBF8F4] flex items-center justify-center text-3xl shadow-sm group-hover:scale-110 transition-transform duration-500">
                   {step.emoji}
                 </div>
               </div>
               <div className="space-y-4">
-                <h3 className="text-2xl font-['Fraunces'] text-[#161B30]">{step.title}</h3>
-                <p className="text-sm text-[#161B30]/50 leading-relaxed font-light">{step.description}</p>
+                <h3 className="text-2xl font-['Fraunces'] text-[#1a2744]">{step.title}</h3>
+                <p className="text-sm text-[#1a2744]/50 leading-relaxed font-light">{step.description}</p>
               </div>
             </div>
           ))}
@@ -190,7 +190,7 @@ const App: React.FC = () => {
       {/* App Preview Section */}
       <Section className="py-12 bg-white/40 border-y border-white">
         <div className="text-center mb-12">
-          <span className="text-[#161B30]/30 text-xs font-bold uppercase tracking-widest">Aperçu de l'expérience</span>
+          <span className="text-[#1a2744]/30 text-xs font-bold uppercase tracking-widest">Aperçu de l'expérience</span>
         </div>
         <AppPreview />
       </Section>
@@ -203,10 +203,10 @@ const App: React.FC = () => {
               <div className="w-1 h-1 rounded-full bg-[#C85A1A]"></div>
               Exploration Interactive
             </div>
-            <h2 className="text-4xl md:text-6xl font-['Fraunces'] font-normal text-[#161B30] leading-tight tracking-tight">
+            <h2 className="text-4xl md:text-6xl font-['Fraunces'] font-normal text-[#1a2744] leading-tight tracking-tight">
               Explore les <span className="italic text-[#C85A1A]">territoires</span> <br className="hidden md:block"/> de la parentalité
             </h2>
-            <p className="text-lg text-[#161B30]/40 font-light max-w-xl mx-auto leading-relaxed">
+            <p className="text-lg text-[#1a2744]/40 font-light max-w-xl mx-auto leading-relaxed">
               9 espaces thématiques pour trouver les ressources qui te ressemblent.
             </p>
           </div>
@@ -220,14 +220,14 @@ const App: React.FC = () => {
                 <div className="w-8 h-8 bg-[#FBF8F4] rounded-lg flex items-center justify-center text-lg mb-4 shadow-[inset_0_1px_4px_rgba(0,0,0,0.02)] transition-transform duration-500 group-hover:rotate-12">
                   {t.icon}
                 </div>
-                <h3 className="text-lg font-['Fraunces'] text-[#161B30] mb-0.5 leading-tight">{t.label}</h3>
-                <p className="text-[10px] text-[#161B30]/40 font-medium">{t.sub}</p>
+                <h3 className="text-lg font-['Fraunces'] text-[#1a2744] mb-0.5 leading-tight">{t.label}</h3>
+                <p className="text-[10px] text-[#1a2744]/40 font-medium">{t.sub}</p>
               </div>
             ))}
           </div>
 
           <div className="mt-12 flex flex-col sm:flex-row items-center justify-center gap-4">
-            <a href="#beta" className="px-10 py-5 bg-[#161B30] text-white rounded-full font-bold text-base transition-all hover:translate-y-[-4px] hover:shadow-xl">
+            <a href="#beta" className="px-10 py-5 bg-[#1a2744] text-white rounded-full font-bold text-base transition-all hover:translate-y-[-4px] hover:shadow-xl">
               Rejoindre la bêta
             </a>
           </div>
@@ -243,9 +243,9 @@ const App: React.FC = () => {
             <div className="space-y-10">
               <div className="space-y-6">
                 <span className="text-orange-600 text-xs font-bold uppercase tracking-widest">Rejoindre la bêta Parenta</span>
-                <h2 className="text-5xl md:text-7xl font-serif text-[#161B30] leading-tight">Entrer dans la parentalité autrement.</h2>
+                <h2 className="text-5xl md:text-7xl font-serif text-[#1a2744] leading-tight">Entrer dans la parentalité autrement.</h2>
               </div>
-              <div className="space-y-6 text-xl text-[#161B30]/60 font-light leading-relaxed">
+              <div className="space-y-6 text-xl text-[#1a2744]/60 font-light leading-relaxed">
                 <p>
                   Nous lançons une première version centrée sur la grossesse.
                 </p>
@@ -253,9 +253,9 @@ const App: React.FC = () => {
                   Les bêta-testeurs participent à la construction d’un nouvel espace de clarification, sans injonction.
                 </p>
               </div>
-              <div className="flex items-center gap-3 p-4 bg-[#161B30]/5 rounded-2xl border border-[#161B30]/5">
-                <Info className="w-5 h-5 text-[#161B30]/30" />
-                <p className="text-sm text-[#161B30]/40 font-medium italic">Accès gratuit — Places limitées pour cette première version.</p>
+              <div className="flex items-center gap-3 p-4 bg-[#1a2744]/5 rounded-2xl border border-[#1a2744]/5">
+                <Info className="w-5 h-5 text-[#1a2744]/30" />
+                <p className="text-sm text-[#1a2744]/40 font-medium italic">Accès gratuit — Places limitées pour cette première version.</p>
               </div>
             </div>
 
@@ -263,37 +263,37 @@ const App: React.FC = () => {
               {!submitted ? (
                 <form onSubmit={handleSubscribe} className="space-y-6">
                   <div className="space-y-2">
-                    <label className="text-[10px] font-bold uppercase tracking-widest text-[#161B30]/40 ml-4">Prénom</label>
+                    <label className="text-[10px] font-bold uppercase tracking-widest text-[#1a2744]/40 ml-4">Prénom</label>
                     <div className="relative">
-                      <User className="absolute left-6 top-1/2 -translate-y-1/2 w-5 h-5 text-[#161B30]/20" />
+                      <User className="absolute left-6 top-1/2 -translate-y-1/2 w-5 h-5 text-[#1a2744]/20" />
                       <input 
                         type="text" 
                         required
                         value={formData.firstName}
                         onChange={(e) => setFormData({...formData, firstName: e.target.value})}
                         placeholder="Ex: Léa"
-                        className="w-full pl-14 pr-6 py-5 rounded-full border-2 border-white focus:border-[#161B30] focus:outline-none transition-all text-lg font-medium shadow-sm bg-white text-[#161B30]"
+                        className="w-full pl-14 pr-6 py-5 rounded-full border-2 border-white focus:border-[#1a2744] focus:outline-none transition-all text-lg font-medium shadow-sm bg-white text-[#1a2744]"
                       />
                     </div>
                   </div>
 
                   <div className="space-y-2">
-                    <label className="text-[10px] font-bold uppercase tracking-widest text-[#161B30]/40 ml-4">Email</label>
+                    <label className="text-[10px] font-bold uppercase tracking-widest text-[#1a2744]/40 ml-4">Email</label>
                     <div className="relative">
-                      <Mail className="absolute left-6 top-1/2 -translate-y-1/2 w-5 h-5 text-[#161B30]/20" />
+                      <Mail className="absolute left-6 top-1/2 -translate-y-1/2 w-5 h-5 text-[#1a2744]/20" />
                       <input 
                         type="email" 
                         required
                         value={formData.email}
                         onChange={(e) => setFormData({...formData, email: e.target.value})}
                         placeholder="lea@exemple.com"
-                        className="w-full pl-14 pr-6 py-5 rounded-full border-2 border-white focus:border-[#161B30] focus:outline-none transition-all text-lg font-medium shadow-sm bg-white text-[#161B30]"
+                        className="w-full pl-14 pr-6 py-5 rounded-full border-2 border-white focus:border-[#1a2744] focus:outline-none transition-all text-lg font-medium shadow-sm bg-white text-[#1a2744]"
                       />
                     </div>
                   </div>
 
                   <div className="space-y-2">
-                    <label className="text-[10px] font-bold uppercase tracking-widest text-[#161B30]/40 ml-4">Ta situation</label>
+                    <label className="text-[10px] font-bold uppercase tracking-widest text-[#1a2744]/40 ml-4">Ta situation</label>
                     <div className="grid grid-cols-2 gap-3">
                       {[
                         { id: 'pregnant', label: 'Enceinte' },
@@ -305,7 +305,7 @@ const App: React.FC = () => {
                           key={opt.id}
                           type="button"
                           onClick={() => setFormData({...formData, status: opt.id})}
-                          className={`py-4 rounded-3xl border-2 transition-all text-xs md:text-sm font-bold whitespace-nowrap ${formData.status === opt.id ? 'bg-[#161B30] text-white border-[#161B30] shadow-md' : 'bg-white border-white text-[#161B30]/40 hover:border-[#161B30]/10'}`}
+                          className={`py-4 rounded-3xl border-2 transition-all text-xs md:text-sm font-bold whitespace-nowrap ${formData.status === opt.id ? 'bg-[#1a2744] text-white border-[#1a2744] shadow-md' : 'bg-white border-white text-[#1a2744]/40 hover:border-[#1a2744]/10'}`}
                         >
                           {opt.label}
                         </button>
@@ -315,19 +315,19 @@ const App: React.FC = () => {
 
                   <button 
                     type="submit"
-                    className="w-full bg-[#161B30] text-white py-6 rounded-full text-sm md:text-xl font-bold hover:shadow-[0_20px_40px_rgba(22,27,48,0.3)] hover:-translate-y-1 transition-all active:scale-[0.98] mt-4"
+                    className="w-full bg-[#1a2744] text-white py-6 rounded-full text-sm md:text-xl font-bold hover:shadow-[0_20px_40px_rgba(22,27,48,0.3)] hover:-translate-y-1 transition-all active:scale-[0.98] mt-4"
                   >
                     S'inscrire à la bêta
                   </button>
                 </form>
               ) : (
                 <div className="py-20 text-center space-y-8 animate-in zoom-in duration-700">
-                  <div className="w-24 h-24 bg-[#161B30] text-white rounded-full flex items-center justify-center mx-auto shadow-xl">
+                  <div className="w-24 h-24 bg-[#1a2744] text-white rounded-full flex items-center justify-center mx-auto shadow-xl">
                     <CheckCircle2 className="w-12 h-12" />
                   </div>
                   <div className="space-y-4">
-                    <h3 className="text-4xl font-serif text-[#161B30]">Merci, {formData.firstName || 'futur parent'}.</h3>
-                    <p className="text-[#161B30]/50 text-xl font-light">Ton invitation à la bêta arrivera bientôt par email.</p>
+                    <h3 className="text-4xl font-serif text-[#1a2744]">Merci, {formData.firstName || 'futur parent'}.</h3>
+                    <p className="text-[#1a2744]/50 text-xl font-light">Ton invitation à la bêta arrivera bientôt par email.</p>
                   </div>
                 </div>
               )}
@@ -340,13 +340,13 @@ const App: React.FC = () => {
       <footer className="py-16 md:py-48 px-6 text-center relative overflow-hidden">
         <div className="max-w-7xl mx-auto space-y-8 md:space-y-12">
           <div className="text-center space-y-4 md:space-y-6">
-            <p className="text-[4rem] sm:text-[8rem] md:text-[12rem] lg:text-[20rem] font-serif italic text-[#161B30] opacity-[0.03] select-none leading-none">Parenta.</p>
-            <p className="text-2xl sm:text-4xl md:text-6xl text-[#161B30] font-serif italic">Choisir en conscience.</p>
+            <p className="text-[4rem] sm:text-[8rem] md:text-[12rem] lg:text-[20rem] font-serif italic text-[#1a2744] opacity-[0.03] select-none leading-none">Parenta.</p>
+            <p className="text-2xl sm:text-4xl md:text-6xl text-[#1a2744] font-serif italic">Choisir en conscience.</p>
           </div>
-          <div className="pt-8 md:pt-16 flex flex-col items-center md:flex-row md:items-center justify-between w-full text-[10px] font-bold uppercase tracking-[0.2em] md:tracking-[0.4em] text-[#161B30]/30 gap-4 md:gap-12 border-t border-navy/5">
+          <div className="pt-8 md:pt-16 flex flex-col items-center md:flex-row md:items-center justify-between w-full text-[10px] font-bold uppercase tracking-[0.2em] md:tracking-[0.4em] text-[#1a2744]/30 gap-4 md:gap-12 border-t border-navy/5">
             <div className="flex gap-6 md:gap-16 justify-center md:justify-start">
               <span>© 2026 Parenta</span>
-              <a href="#" className="hover:text-[#161B30] transition-colors">Mentions légales</a>
+              <a href="#" className="hover:text-[#1a2744] transition-colors">Mentions légales</a>
             </div>
 
             <div className="flex justify-center md:absolute md:left-1/2 md:-translate-x-1/2">
@@ -355,8 +355,8 @@ const App: React.FC = () => {
 
             <div className="flex flex-col items-center md:flex-row md:items-center gap-3 md:gap-16 justify-center md:justify-end">
               <div className="flex flex-col items-center md:items-end gap-1">
-                <a href="#beta" className="hover:text-[#161B30] transition-colors">Contact</a>
-                <a href="mailto:contact@parenta.fr" className="hover:text-[#161B30] transition-colors normal-case">contact@parenta.fr</a>
+                <a href="#beta" className="hover:text-[#1a2744] transition-colors">Contact</a>
+                <a href="mailto:contact@parenta.fr" className="hover:text-[#1a2744] transition-colors normal-case">contact@parenta.fr</a>
               </div>
             </div>
           </div>
