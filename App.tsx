@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { Logo } from './components/Logo';
 import { Section } from './components/Section';
 import { AppPreview } from './components/AppPreview';
+import { addContactToBrevo } from './services/brevoService';
 import { 
   ArrowRight, 
   CheckCircle2, 
@@ -20,9 +21,14 @@ const App: React.FC = () => {
   });
   const [submitted, setSubmitted] = useState(false);
 
-  const handleSubscribe = (e: React.FormEvent) => {
+  const handleSubscribe = async (e: React.FormEvent) => {
     e.preventDefault();
     if (formData.email) {
+      try {
+        await addContactToBrevo(formData.firstName, formData.email, formData.status);
+      } catch (err) {
+        console.error('Brevo:', err);
+      }
       setSubmitted(true);
       setFormData({ firstName: '', email: '', status: 'pregnant' });
     }
@@ -181,6 +187,14 @@ const App: React.FC = () => {
         </div>
       </Section>
 
+      {/* App Preview Section */}
+      <Section className="py-12 bg-white/40 border-y border-white">
+        <div className="text-center mb-12">
+          <span className="text-[#161B30]/30 text-xs font-bold uppercase tracking-widest">Aperçu de l'expérience</span>
+        </div>
+        <AppPreview />
+      </Section>
+
       {/* Territoires Section - Compact */}
       <Section className="bg-[#FBF8F4] py-20 md:py-24 rounded-[4rem] mx-4 md:mx-10 mb-24">
         <div className="max-w-6xl mx-auto text-center">
@@ -199,8 +213,8 @@ const App: React.FC = () => {
 
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-4">
             {territories.map((t, i) => (
-              <div 
-                key={i} 
+              <div
+                key={i}
                 className="group bg-white rounded-[1.5rem] p-6 text-left border border-transparent transition-all duration-500 hover:shadow-lg hover:-translate-y-1 hover:border-[#C85A1A]/10"
               >
                 <div className="w-8 h-8 bg-[#FBF8F4] rounded-lg flex items-center justify-center text-lg mb-4 shadow-[inset_0_1px_4px_rgba(0,0,0,0.02)] transition-transform duration-500 group-hover:rotate-12">
@@ -218,14 +232,6 @@ const App: React.FC = () => {
             </a>
           </div>
         </div>
-      </Section>
-
-      {/* App Preview Section */}
-      <Section className="py-12 bg-white/40 border-y border-white">
-        <div className="text-center mb-12">
-          <span className="text-[#161B30]/30 text-xs font-bold uppercase tracking-widest">Aperçu de l'expérience</span>
-        </div>
-        <AppPreview />
       </Section>
 
       {/* CTA Section */}
@@ -344,12 +350,15 @@ const App: React.FC = () => {
             </div>
             
             <div className="flex justify-center md:absolute md:left-1/2 md:-translate-x-1/2">
-              <span className="text-navy/20 font-medium">Made with love 🇫🇷</span>
+              <span className="text-navy/20 font-medium flex items-center gap-2">Made with love <span className="opacity-20"><Logo hideText className="h-4" /></span></span>
             </div>
 
             <div className="flex gap-16 justify-center md:justify-end">
               <a href="https://www.instagram.com/parenta.app/" target="_blank" rel="noopener noreferrer" className="hover:text-[#161B30] transition-colors">Instagram</a>
-              <a href="#beta" className="hover:text-[#161B30] transition-colors">Contact</a>
+              <div className="flex flex-col items-end gap-1">
+                <a href="#beta" className="hover:text-[#161B30] transition-colors">Contact</a>
+                <a href="mailto:contact@parenta.fr" className="hover:text-[#161B30] transition-colors normal-case">contact@parenta.fr</a>
+              </div>
             </div>
           </div>
         </div>
