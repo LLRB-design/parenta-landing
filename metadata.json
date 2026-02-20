@@ -1,0 +1,8 @@
+{
+  "name": "Parenta - Choisir en conscience",
+  "description": "Une landing page moderne et épurée pour Parenta, une plateforme d'accompagnement à la parentalité axée sur la compréhension globale et les choix alignés.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone"
+  ]
+}
