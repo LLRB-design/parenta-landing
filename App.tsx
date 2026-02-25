@@ -20,6 +20,7 @@ const App: React.FC = () => {
     status: 'pregnant' // 'pregnant', 'partner', 'parent', 'other'
   });
   const [submitted, setSubmitted] = useState(false);
+  const [submittedName, setSubmittedName] = useState('');
   const [submitError, setSubmitError] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
 
@@ -30,6 +31,7 @@ const App: React.FC = () => {
       setSubmitError(null);
       try {
         await addContactToBrevo(formData.firstName, formData.email, formData.status);
+        setSubmittedName(formData.firstName);
         setSubmitted(true);
         setFormData({ firstName: '', email: '', status: 'pregnant' });
       } catch (err) {
@@ -81,21 +83,26 @@ const App: React.FC = () => {
   ];
 
   return (
-    <div className="min-h-screen selection:bg-pink-100 overflow-x-hidden">
+    <div className="h-screen overflow-y-scroll overflow-x-hidden snap-y snap-mandatory scroll-smooth selection:bg-pink-100">
       {/* Navigation */}
       <nav className="fixed top-0 w-full z-50 bg-white/60 backdrop-blur-xl border-b border-white/20">
         <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
           <Logo className="h-8" />
-          <div className="hidden md:flex gap-10 text-[10px] font-bold uppercase tracking-[0.2em] items-center text-[#1a2744]">
-            <a href="#beta" className="bg-[#1a2744] text-white px-8 py-3.5 rounded-full hover:shadow-2xl hover:scale-105 transition-all duration-300">
+          <div className="flex items-center gap-4">
+            <a href="#beta" className="md:hidden bg-[#1a2744] text-white px-5 py-2.5 rounded-full text-xs font-bold hover:shadow-lg transition-all duration-300">
               Rejoindre la bêta
             </a>
+            <div className="hidden md:flex gap-10 font-bold uppercase tracking-[0.2em] items-center text-[#1a2744]">
+              <a href="#beta" className="bg-[#1a2744] text-white px-8 py-3.5 rounded-full text-sm hover:shadow-2xl hover:scale-105 transition-all duration-300">
+                Rejoindre la bêta
+              </a>
+            </div>
           </div>
         </div>
       </nav>
 
       {/* Hero Section - Aligned and Powerful */}
-      <header className="relative pt-32 pb-24 md:pt-48 md:pb-40 px-6 overflow-hidden min-h-[90vh] flex items-center">
+      <header className="relative snap-start pt-32 pb-24 md:pt-48 md:pb-40 px-6 overflow-hidden min-h-screen flex items-center">
         {/* Decorative elements */}
         <div className="absolute top-1/4 -left-20 w-96 h-96 bg-pink-200/20 rounded-full blur-[120px] -z-10"></div>
         <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-orange-100/30 rounded-full blur-[150px] -z-10"></div>
@@ -146,7 +153,7 @@ const App: React.FC = () => {
       </header>
 
       {/* Section Problème */}
-      <Section id="propose" className="bg-[#1a2744] text-white rounded-[5rem] mx-4 md:mx-10 mb-24 scroll-mt-24">
+      <Section id="propose" className="bg-[#1a2744] text-white rounded-[5rem] mx-4 md:mx-10 scroll-mt-24">
         <div className="max-w-5xl mx-auto space-y-12 md:space-y-24 py-8 md:py-12">
           <div className="space-y-8 text-center">
             <span className="text-pink-300 text-xs font-bold uppercase tracking-[0.5em]">Le constat</span>
@@ -203,7 +210,7 @@ const App: React.FC = () => {
       </Section>
 
       {/* Territoires Section - Compact */}
-      <Section className="bg-[#FBF8F4] py-20 md:py-24 rounded-[4rem] mx-4 md:mx-10 mb-24">
+      <Section className="bg-[#FBF8F4] py-20 md:py-24 rounded-[4rem] mx-4 md:mx-10">
         <div className="max-w-6xl mx-auto text-center">
           <div className="mb-12 space-y-6">
             <div className="inline-flex items-center gap-2 px-4 py-1 rounded-full bg-[#F5E6D8]/50 text-[#C85A1A] text-[9px] font-bold uppercase tracking-[0.2em] border border-[#F5E6D8]">
@@ -218,17 +225,17 @@ const App: React.FC = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-4">
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
             {territories.map((t, i) => (
               <div
                 key={i}
-                className="group bg-white rounded-[1.5rem] p-6 text-left border border-transparent transition-all duration-500 hover:shadow-lg hover:-translate-y-1 hover:border-[#C85A1A]/10"
+                className={`group bg-white rounded-[1.5rem] p-6 text-left border border-transparent transition-all duration-500 hover:shadow-lg hover:-translate-y-1 hover:border-[#C85A1A]/10 ${i === territories.length - 1 && territories.length % 2 !== 0 ? 'col-span-2 md:col-span-1' : ''}`}
               >
                 <div className="w-8 h-8 bg-[#FBF8F4] rounded-lg flex items-center justify-center text-lg mb-4 shadow-[inset_0_1px_4px_rgba(0,0,0,0.02)] transition-transform duration-500 group-hover:rotate-12">
                   {t.icon}
                 </div>
                 <h3 className="text-lg font-['Fraunces'] text-[#1a2744] mb-0.5 leading-tight">{t.label}</h3>
-                <p className="text-[10px] text-[#1a2744]/40 font-medium">{t.sub}</p>
+                <p className="text-xs text-[#1a2744]/60 font-medium">{t.sub}</p>
               </div>
             ))}
           </div>
@@ -243,7 +250,7 @@ const App: React.FC = () => {
 
       {/* CTA Section */}
       <Section id="beta" className="py-48 scroll-mt-24">
-        <div className="max-w-5xl mx-auto bg-white p-12 md:p-24 rounded-[5rem] shadow-[0_64px_128px_-32px_rgba(22,27,48,0.1)] border border-white relative overflow-hidden">
+        <div className="max-w-5xl mx-auto bg-white p-5 md:p-24 rounded-[5rem] shadow-[0_64px_128px_-32px_rgba(22,27,48,0.1)] border border-white relative overflow-hidden">
           <div className="absolute top-0 right-0 -mr-40 -mt-40 w-96 h-96 bg-pink-100 rounded-full blur-[100px] opacity-40"></div>
           
           <div className="relative z-10 grid lg:grid-cols-2 gap-6 lg:gap-20 items-center">
@@ -270,7 +277,7 @@ const App: React.FC = () => {
               {!submitted ? (
                 <form onSubmit={handleSubscribe} className="space-y-6">
                   <div className="space-y-2">
-                    <label className="text-[10px] font-bold uppercase tracking-widest text-[#1a2744]/40 ml-4">Prénom</label>
+                    <label className="text-xs font-bold uppercase tracking-widest text-[#1a2744]/60 ml-4">Prénom</label>
                     <div className="relative">
                       <User className="absolute left-6 top-1/2 -translate-y-1/2 w-5 h-5 text-[#1a2744]/20" />
                       <input 
@@ -279,13 +286,13 @@ const App: React.FC = () => {
                         value={formData.firstName}
                         onChange={(e) => setFormData({...formData, firstName: e.target.value})}
                         placeholder="Ex: Léa"
-                        className="w-full pl-14 pr-6 py-5 rounded-full border-2 border-white focus:border-[#1a2744] focus:outline-none transition-all text-lg font-medium shadow-sm bg-white text-[#1a2744]"
+                        className="w-full pl-14 pr-6 py-5 rounded-full border-2 border-[#1a2744]/10 focus:border-[#1a2744] focus:outline-none transition-all text-lg font-medium shadow-sm bg-white text-[#1a2744]"
                       />
                     </div>
                   </div>
 
                   <div className="space-y-2">
-                    <label className="text-[10px] font-bold uppercase tracking-widest text-[#1a2744]/40 ml-4">Email</label>
+                    <label className="text-xs font-bold uppercase tracking-widest text-[#1a2744]/60 ml-4">Email</label>
                     <div className="relative">
                       <Mail className="absolute left-6 top-1/2 -translate-y-1/2 w-5 h-5 text-[#1a2744]/20" />
                       <input 
@@ -294,13 +301,13 @@ const App: React.FC = () => {
                         value={formData.email}
                         onChange={(e) => setFormData({...formData, email: e.target.value})}
                         placeholder="lea@exemple.com"
-                        className="w-full pl-14 pr-6 py-5 rounded-full border-2 border-white focus:border-[#1a2744] focus:outline-none transition-all text-lg font-medium shadow-sm bg-white text-[#1a2744]"
+                        className="w-full pl-14 pr-6 py-5 rounded-full border-2 border-[#1a2744]/10 focus:border-[#1a2744] focus:outline-none transition-all text-lg font-medium shadow-sm bg-white text-[#1a2744]"
                       />
                     </div>
                   </div>
 
                   <div className="space-y-2">
-                    <label className="text-[10px] font-bold uppercase tracking-widest text-[#1a2744]/40 ml-4">Ta situation</label>
+                    <label className="text-xs font-bold uppercase tracking-widest text-[#1a2744]/60 ml-4">Ta situation</label>
                     <div className="grid grid-cols-2 gap-3">
                       {[
                         { id: 'pregnant', label: 'Enceinte' },
@@ -312,7 +319,7 @@ const App: React.FC = () => {
                           key={opt.id}
                           type="button"
                           onClick={() => setFormData({...formData, status: opt.id})}
-                          className={`py-4 rounded-3xl border-2 transition-all text-xs md:text-sm font-bold whitespace-nowrap ${formData.status === opt.id ? 'bg-[#1a2744] text-white border-[#1a2744] shadow-md' : 'bg-white border-white text-[#1a2744]/40 hover:border-[#1a2744]/10'}`}
+                          className={`py-4 rounded-3xl border-2 transition-all text-xs md:text-sm font-bold whitespace-nowrap ${formData.status === opt.id ? 'bg-[#1a2744] text-white border-[#1a2744] shadow-md' : 'bg-white border-[#1a2744]/10 text-[#1a2744]/60 hover:border-[#1a2744]/30'}`}
                         >
                           {opt.label}
                         </button>
@@ -323,7 +330,7 @@ const App: React.FC = () => {
                   <button
                     type="submit"
                     disabled={loading}
-                    className="w-full bg-[#1a2744] text-white py-6 rounded-full text-sm md:text-xl font-bold hover:shadow-[0_20px_40px_rgba(22,27,48,0.3)] hover:-translate-y-1 transition-all active:scale-[0.98] mt-4 disabled:opacity-60 disabled:cursor-not-allowed"
+                    className="w-full bg-[#1a2744] text-white py-6 rounded-full text-base md:text-xl font-bold hover:shadow-[0_20px_40px_rgba(22,27,48,0.3)] hover:-translate-y-1 transition-all active:scale-[0.98] mt-4 disabled:opacity-60 disabled:cursor-not-allowed"
                   >
                     {loading ? 'Envoi en cours…' : "S'inscrire à la bêta"}
                   </button>
@@ -339,7 +346,7 @@ const App: React.FC = () => {
                     <CheckCircle2 className="w-12 h-12" />
                   </div>
                   <div className="space-y-4">
-                    <h3 className="text-4xl font-serif text-[#1a2744]">Merci, {formData.firstName || 'futur parent'}.</h3>
+                    <h3 className="text-4xl font-serif text-[#1a2744]">Merci, {submittedName || 'futur parent'}.</h3>
                     <p className="text-[#1a2744]/50 text-xl font-light">Ton invitation à la bêta arrivera bientôt par email.</p>
                   </div>
                 </div>
@@ -350,7 +357,7 @@ const App: React.FC = () => {
       </Section>
 
       {/* Footer */}
-      <footer className="py-16 md:py-48 px-6 text-center relative overflow-hidden">
+      <footer className="snap-start py-16 md:py-48 px-6 text-center relative overflow-hidden">
         <div className="max-w-7xl mx-auto space-y-8 md:space-y-12">
           <div className="text-center space-y-4 md:space-y-6">
             <p className="text-[4rem] sm:text-[8rem] md:text-[12rem] lg:text-[20rem] font-serif italic text-[#1a2744] opacity-[0.03] select-none leading-none">Parenta.</p>

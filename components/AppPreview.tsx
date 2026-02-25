@@ -46,7 +46,7 @@ export const AppPreview: React.FC = () => {
       </div>
 
       {/* Frame Container */}
-      <div className={`relative transition-all duration-500 ease-in-out ${view === 'desktop' ? 'w-full max-w-5xl h-[600px]' : 'w-[375px] h-[667px]'} bg-[#F7F4F0] rounded-[2.5rem] overflow-hidden shadow-2xl border border-navy/5 flex`}>
+      <div className={`relative transition-all duration-500 ease-in-out ${view === 'desktop' ? 'w-full max-w-5xl h-[600px]' : 'w-full max-w-[375px] h-[667px]'} bg-[#F7F4F0] rounded-[2.5rem] overflow-hidden shadow-2xl border border-navy/5 flex`}>
         
         {view === 'desktop' ? (
           <>
