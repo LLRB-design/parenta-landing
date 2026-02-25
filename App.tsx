@@ -256,8 +256,8 @@ const App: React.FC = () => {
           <div className="relative z-10 grid lg:grid-cols-2 gap-6 lg:gap-20 items-center">
             <div className="space-y-10">
               <div className="space-y-6">
-                <span className="text-orange-600 text-xs font-bold uppercase tracking-widest">Rejoindre la bêta Parenta</span>
-                <h2 className="text-5xl md:text-7xl font-serif text-[#1a2744] leading-tight">Entrer dans la parentalité autrement.</h2>
+                <span className="block text-center text-orange-600 text-xs font-bold uppercase tracking-widest">Rejoindre la bêta Parenta</span>
+                <h2 className="text-5xl md:text-7xl font-['Fraunces'] font-normal text-[#1a2744] leading-tight">Entrer dans la parentalité autrement.</h2>
               </div>
               <div className="space-y-6 text-xl text-[#1a2744]/60 font-light leading-relaxed">
                 <p>
